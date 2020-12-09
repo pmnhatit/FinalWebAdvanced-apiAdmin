@@ -25,7 +25,8 @@ module.exports.updateInfo = async (req, res, next) =>{
         await userService.updateUser(req.body.id,req.body.name,req.body.phone);
         const user = await userService.getUserByID(req.body.id);
         console.log(user);
-        const infoUser = {id: user._id, name: user.name, phone: user.phone, username: user.username}
+        const infoUser = {id: user._id, name: user.name, phone: user.phone,
+            username: user.username, email: user.email, auth: user.auth};
         res.json({message:"200OK", infoUser: infoUser});
     } catch (error) {
         res.status(401).json({message:"errors",error:error});
