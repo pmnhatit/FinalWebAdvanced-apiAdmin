@@ -7,7 +7,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./components/user');
+const adminRouter = require('./components/admin');
+const userRouter = require('./components/user');
 
 
 
@@ -28,7 +29,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
 app.use('/', indexRouter);
-app.use('/user', usersRouter);
+app.use('/admin', adminRouter);
+app.use('/user', userRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

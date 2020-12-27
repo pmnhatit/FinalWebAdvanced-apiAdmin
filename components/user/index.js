@@ -1,15 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const userController = require('./userController');
 const passPort = require('../../services/passport');
+const userController = require('./userController')
 
-router.get('/signin',passPort.authenticate('local', { session: false }),userController.signIn);
+// router.get('/users',passPort.authenticate('jwt',{session: false}),userController.getAllUser);
+router.get('/users',userController.getAllUser);
 
-router.post('/signin',passPort.authenticate('local', { session: false }),userController.signIn);
-
-router.put('/edit',passPort.authenticate('jwt', { session: false }),userController.updateInfo);
-
-router.post('/addadmin',passPort.authenticate('jwt',{session: false}),userController.createAdmin);
+router.post('/infouser',userController.getUserById);
 
 module.exports = router;

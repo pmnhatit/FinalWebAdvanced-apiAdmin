@@ -7,13 +7,12 @@ var userchema = new mongoose.Schema({
     password: String,
     name: String,
     phone: String,
-    email: String,
-    auth: String
+    email: String
 },
     {
-        collection: 'account-admin'
+        collection: 'user'
     });
 
-const user = db.useDb("final-web-advanced").model("account-admin", userchema);
+const user = db.useDb("final-web-advanced").model("user", userchema);
 
 module.exports = user;
