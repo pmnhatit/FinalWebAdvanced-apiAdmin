@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const indexRouter = require('./routes/index');
 const adminRouter = require('./components/admin');
 const userRouter = require('./components/user');
-
+const historyRouter = require('./components/history');
 
 
 //connect to database
@@ -31,6 +31,7 @@ app.use(cors());
 app.use('/', indexRouter);
 app.use('/admin', adminRouter);
 app.use('/user', userRouter);
+app.use('/history', historyRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

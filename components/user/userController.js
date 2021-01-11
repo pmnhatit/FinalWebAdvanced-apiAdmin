@@ -26,7 +26,7 @@ module.exports.getUserById = async (req, res, next) =>{
     try {
         console.log(req.body.id);
         const user = await userService.getUserById(req.body.id);
-        // console.log(user);
+        console.log(user);
         res.json({message:"200OK", infoUser: user});
     } catch (error) {
         res.status(401).json({message:"errors",error:error});
