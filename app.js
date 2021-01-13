@@ -10,6 +10,7 @@ const indexRouter = require('./routes/index');
 const adminRouter = require('./components/admin');
 const userRouter = require('./components/user');
 const historyRouter = require('./components/history');
+const chatRouter = require('./components/chat');
 
 
 //connect to database
@@ -32,6 +33,7 @@ app.use('/', indexRouter);
 app.use('/admin', adminRouter);
 app.use('/user', userRouter);
 app.use('/history', historyRouter);
+app.use('/chat', chatRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
