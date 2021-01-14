@@ -6,7 +6,8 @@ var historychema = new mongoose.Schema({
     player1: String,
     player2: String,
     date: String,
-    order: Number
+    order: Number,
+    draw: Boolean
 },
     {
         collection: 'history'
